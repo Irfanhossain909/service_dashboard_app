@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:service_dashboard_app/core/component/app_text/app_text.dart';
 import 'package:service_dashboard_app/core/const/app_color.dart';
 
 class DropdownItemModel {
   final String key;
   final String value;
-  final IconData icon;
 
-  DropdownItemModel({
-    required this.key,
-    required this.value,
-    required this.icon,
-  });
+  DropdownItemModel({required this.key, required this.value});
 }
 
 class KeyValueDropdown extends StatelessWidget {
@@ -55,63 +51,68 @@ class KeyValueDropdown extends StatelessWidget {
     }
 
     final border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: Colors.white),
+      borderRadius: BorderRadius.circular(12.r),
+      borderSide: BorderSide(color: AppColors.black.withValues(alpha: 0.2)),
     );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (title != null && title!.trim().isNotEmpty) ...[
-          Text(
-            title!,
-            style: TextStyle(
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w500,
-              color: AppColors.backgrounColor,
-            ),
+          AppText(
+            data: title!,
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w500,
+            color: AppColors.black,
           ),
           SizedBox(height: 6.h),
         ],
 
         DropdownButtonFormField<String>(
           value: normalizedSelectedKey,
-          hint: Text(
-            hint,
-            style: TextStyle(
-              fontSize: 12.sp,
-              color: AppColors.offWhite.withValues(alpha: 0.4),
-            ),
+          hint: AppText(
+            data: hint,
+            fontSize: 14.sp,
+            color: AppColors.black.withValues(alpha: 0.4),
           ),
 
           items: items.map((item) {
             return DropdownMenuItem<String>(
               value: item.key,
-              child: Row(
-                children: [
-                  Icon(item.icon, size: 16.sp, color: AppColors.nevColor),
-                  SizedBox(width: 8.w),
-                  Text(
-                    item.value,
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.offWhite,
-                    ),
-                  ),
-                ],
+              child: AppText(
+                data: item.value,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w400,
+                color: AppColors.black,
               ),
             );
           }).toList(),
 
           onChanged: onChanged,
 
+          dropdownColor: AppColors.nevColor,
+
+          icon: Icon(
+            Icons.keyboard_arrow_down_rounded,
+            color: AppColors.black,
+            size: 20.sp,
+          ),
+
+          style: TextStyle(
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w400,
+            color: AppColors.offWhite,
+          ),
+
           decoration: InputDecoration(
             border: border,
             enabledBorder: border,
             focusedBorder: border,
             disabledBorder: border,
-            contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: 12.w,
+              vertical: 12.h,
+            ),
           ),
         ),
       ],

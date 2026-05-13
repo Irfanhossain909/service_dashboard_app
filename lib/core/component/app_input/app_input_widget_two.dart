@@ -129,7 +129,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
                   widget.title!,
                   style: GoogleFonts.jost().copyWith(
                     fontSize: widget.titleFontSize ?? 14.sp,
-                    color: widget.titleColor ?? Colors.white,
+                    color: widget.titleColor ?? Colors.black,
                     fontWeight: widget.titleFontWeight ?? FontWeight.w500,
                   ),
                 ),
@@ -137,7 +137,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
                   Text(
                     ' *',
                     style: GoogleFonts.jost().copyWith(
-                      color: widget.titleColor ?? Colors.white,
+                      color: widget.titleColor ?? Colors.black,
                       fontSize: widget.titleFontSize ?? 14.sp,
                     ),
                   ),

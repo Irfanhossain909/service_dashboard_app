@@ -13,4 +13,7 @@ class AppRoutes {
   final String loginScreen = "/login-screen";
   final String forgetPasswordScreen = "/forget-password-screen";
   final String resetPasswordScreen = "/reset-password-screen";
+  final String signupScreen = "/signup-screen";
+  final String verifyOtpScreen = "/verify-otp-screen";
+  final String businessDetailsScreen = "/business-details-screen";
 }

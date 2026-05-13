@@ -11,8 +11,8 @@ import 'package:service_dashboard_app/core/route/app_routes.dart';
 import 'package:service_dashboard_app/features/auth/login/presentation/widget/divider_with_text.dart';
 import 'package:service_dashboard_app/features/auth/login/presentation/widget/role_selection_widget.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +31,12 @@ class LoginScreen extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                   AppText(
-                    data: "Welcome Back",
+                    data: "Create account",
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w600,
                   ),
                   AppText(
-                    data: "Sign in to your dashboard",
+                    data: "Sign up to your dashboard",
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
                   ),
@@ -90,7 +90,16 @@ class LoginScreen extends StatelessWidget {
 
                   AppInputWidgetTwo(
                     isOptional: true,
-                    isEmail: true,
+                    hintText: "Enter your full name",
+                    borderColor: AppColors.nevColor,
+                    title: "Full name",
+                    titleFontSize: 14.sp,
+                    keyboardType: TextInputType.name,
+                    titleFontWeight: FontWeight.w500,
+                    titleColor: AppColors.black,
+                  ),
+                  AppInputWidgetTwo(
+                    isOptional: true,
                     hintText: "Enter your email address",
                     borderColor: AppColors.nevColor,
                     title: "Email",
@@ -101,7 +110,16 @@ class LoginScreen extends StatelessWidget {
                   ),
                   AppInputWidgetTwo(
                     isOptional: true,
-                    isPassWord: true,
+                    hintText: "Enter your phone number",
+                    borderColor: AppColors.nevColor,
+                    title: "Phone",
+                    titleFontSize: 14.sp,
+                    keyboardType: TextInputType.number,
+                    titleFontWeight: FontWeight.w500,
+                    titleColor: AppColors.black,
+                  ),
+                  AppInputWidgetTwo(
+                    isOptional: true,
                     hintText: "Enter your password",
                     borderColor: AppColors.nevColor,
                     title: "Password",
@@ -110,34 +128,29 @@ class LoginScreen extends StatelessWidget {
                     titleFontWeight: FontWeight.w500,
                     titleColor: AppColors.black,
                   ),
-
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: InkWell(
-                      hoverColor: Colors.transparent,
-                      splashColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () {
-                        Get.toNamed(AppRoutes.instance.forgetPasswordScreen);
-                      },
-                      child: AppText(
-                        data: "Forgot Password?",
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.brown,
-                      ),
-                    ),
+                  AppInputWidgetTwo(
+                    isOptional: true,
+                    hintText: "Enter confirm password",
+                    borderColor: AppColors.nevColor,
+                    title: "Confirm password",
+                    titleFontSize: 14.sp,
+                    keyboardType: TextInputType.visiblePassword,
+                    titleFontWeight: FontWeight.w500,
+                    titleColor: AppColors.black,
                   ),
-
-                  SizedBox(height: 8.h),
-
-                  AppButton(title: "Login", onTap: () {}),
+                  SizedBox(height: 12.h),
+                  AppButton(
+                    title: "Continue",
+                    onTap: () {
+                      Get.toNamed(AppRoutes.instance.verifyOtpScreen);
+                    },
+                  ),
                   SizedBox(height: 12.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       AppText(
-                        data: "Don't have an account? ",
+                        data: "Already have an account? ",
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                       ),
@@ -146,10 +159,10 @@ class LoginScreen extends StatelessWidget {
                         splashColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () {
-                          Get.toNamed(AppRoutes.instance.signupScreen);
+                          Get.toNamed(AppRoutes.instance.loginScreen);
                         },
                         child: AppText(
-                          data: "Sign Up",
+                          data: "Sign In",
                           fontSize: 14.sp,
                           fontWeight: FontWeight.bold,
                           color: AppColors.brown,

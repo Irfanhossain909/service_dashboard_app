@@ -29,7 +29,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         data: text ?? "", // Use passed 'text' or default to "Profile"
         fontSize: 18.sp,
         fontWeight: FontWeight.w700,
-        color: AppColors.backgrounColor,
+        color: AppColors.black,
       ),
       centerTitle: true,
       automaticallyImplyLeading: autoShowLeading,
@@ -47,7 +47,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
                 child: Icon(
                   Icons.arrow_back_ios,
                   size: 18.r,
-                  color: AppColors.backgrounColor,
+                  color: AppColors.black,
                 ),
               ),
             )

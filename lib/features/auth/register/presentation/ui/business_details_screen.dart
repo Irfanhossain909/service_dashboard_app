@@ -24,7 +24,7 @@ class BusinessDetailsScreen extends StatelessWidget {
           child: AppButton(
             title: "Continue",
             onTap: () {
-              Get.offAllNamed(AppRoutes.instance.loginScreen);
+              Get.toNamed(AppRoutes.instance.connnetStripeScreen);
             },
           ),
         ),

@@ -16,4 +16,10 @@ class AppRoutes {
   final String signupScreen = "/signup-screen";
   final String verifyOtpScreen = "/verify-otp-screen";
   final String businessDetailsScreen = "/business-details-screen";
+  final String connnetStripeScreen = "/connnet-stripe-screen";
+
+  /// ========= Vendor Routes =========
+  final String vendorDashboardScreen = "/vendor-dashboard-screen";
+
+  final String vendorSupportScreen = "/vendor-support-screen";
 }

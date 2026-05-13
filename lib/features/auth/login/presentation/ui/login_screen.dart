@@ -8,6 +8,7 @@ import 'package:service_dashboard_app/core/component/app_text/app_text.dart';
 import 'package:service_dashboard_app/core/const/app_assets.dart';
 import 'package:service_dashboard_app/core/const/app_color.dart';
 import 'package:service_dashboard_app/core/route/app_routes.dart';
+import 'package:service_dashboard_app/core/service/storage/get_storage_services.dart';
 import 'package:service_dashboard_app/features/auth/login/presentation/widget/divider_with_text.dart';
 import 'package:service_dashboard_app/features/auth/login/presentation/widget/role_selection_widget.dart';
 
@@ -131,7 +132,23 @@ class LoginScreen extends StatelessWidget {
 
                   SizedBox(height: 8.h),
 
-                  AppButton(title: "Login", onTap: () {}),
+                  AppButton(
+                    title: "Login",
+                    onTap: () {
+                      final role = GetStorageServices.instance.getRole();
+                      if (role == "vendor") {
+                        Get.toNamed(AppRoutes.instance.vendorDashboardScreen);
+                      } else {
+                        // Get.toNamed(
+                        //   // AppRoutes.instance.serviceProviderDashboardScreen,
+                        // );
+                        Get.snackbar(
+                          "Error",
+                          "Service Provider Dashboard Screen is not available yet",
+                        );
+                      }
+                    },
+                  ),
                   SizedBox(height: 12.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

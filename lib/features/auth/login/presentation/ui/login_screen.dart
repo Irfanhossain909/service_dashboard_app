@@ -9,6 +9,7 @@ import 'package:service_dashboard_app/core/const/app_assets.dart';
 import 'package:service_dashboard_app/core/const/app_color.dart';
 import 'package:service_dashboard_app/core/route/app_routes.dart';
 import 'package:service_dashboard_app/core/service/storage/get_storage_services.dart';
+import 'package:service_dashboard_app/core/utils/app_logger.dart';
 import 'package:service_dashboard_app/features/auth/login/presentation/widget/divider_with_text.dart';
 import 'package:service_dashboard_app/features/auth/login/presentation/widget/role_selection_widget.dart';
 
@@ -84,7 +85,9 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ],
                     onChanged: (value) {
-                      print(value); // vendor / customer
+                      GetStorageServices.instance.setRole(value ?? "");
+                      final role = GetStorageServices.instance.getRole();
+                      AppLogger.info("role: $role");
                     },
                   ),
                   SizedBox(height: 12.h),
@@ -137,7 +140,7 @@ class LoginScreen extends StatelessWidget {
                     onTap: () {
                       final role = GetStorageServices.instance.getRole();
                       if (role == "vendor") {
-                        Get.toNamed(AppRoutes.instance.vendorDashboardScreen);
+                        Get.toNamed(AppRoutes.instance.vendorNavigationScreen);
                       } else {
                         // Get.toNamed(
                         //   // AppRoutes.instance.serviceProviderDashboardScreen,

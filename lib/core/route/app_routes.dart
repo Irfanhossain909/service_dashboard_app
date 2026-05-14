@@ -7,6 +7,14 @@ class AppRoutes {
   final String onBoardingScreen = "/onboarding-screen";
   final String roleScreen = "/role-screen";
 
+  /// ========= Navigation Routes =========
+  final String vendorNavigationScreen = "/vendor-navigation-screen";
+
+
+  /// ========= Vendor Product Routes =========
+  final String vendorProductScreen = "/vendor-product-screen";
+  final String vendorAddProductScreen = "/vendor-add-product-screen";
+
   // ======== Vendor Routes ========
 
   ///// AUTH

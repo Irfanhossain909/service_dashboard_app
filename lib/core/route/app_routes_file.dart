@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:service_dashboard_app/core/route/app_routes.dart';
 import 'package:service_dashboard_app/core/route/bindings/app_binding.dart';
 import 'package:service_dashboard_app/core/route/bindings/auth_binding.dart';
+import 'package:service_dashboard_app/core/route/bindings/navigation_screen_binding.dart';
 import 'package:service_dashboard_app/features/auth/connect_stripe/presentation/ui/connnet_stripe_screen.dart';
 import 'package:service_dashboard_app/features/auth/login/presentation/ui/forget_password_screen.dart';
 import 'package:service_dashboard_app/features/auth/login/presentation/ui/login_screen.dart';
@@ -17,16 +18,20 @@ import 'package:service_dashboard_app/features/vendor/customer_management/presen
 import 'package:service_dashboard_app/features/vendor/dashboard/presentation/ui/vendor_dashboard_screen.dart';
 import 'package:service_dashboard_app/features/vendor/earn_and_payout/presentation/ui/vendor_earn_and_payout_screen.dart';
 import 'package:service_dashboard_app/features/vendor/legal/presentation/ui/vendor_legal_screen.dart';
+import 'package:service_dashboard_app/features/vendor/navigation/ui/vendor_navigation_screen.dart';
+import 'package:service_dashboard_app/features/vendor/products/presentation/ui/vendor_add_product_screen.dart';
+import 'package:service_dashboard_app/features/vendor/products/presentation/ui/vendor_product_screen.dart';
 import 'package:service_dashboard_app/features/vendor/profile/presentation/ui/vendor_profile_screen.dart';
 import 'package:service_dashboard_app/features/vendor/security/presentation/ui/vendor_secuirity_screen.dart';
 import 'package:service_dashboard_app/features/vendor/support/presentation/ui/vendor_support_screen.dart';
 
 List<GetPage> appRootRoutesFile = <GetPage>[
   // --------------------- Navigation ---------------------
-  // GetPage(
-  //   name: AppRoutes.instance.navigationScreen,
-  //   page: () => const NavigationScreen(),
-  // ),
+  GetPage(
+    name: AppRoutes.instance.vendorNavigationScreen,
+    binding: NavigationScreenBinding(),
+    page: () => const VendorNavigationScreen(),
+  ),
 
   /////// AUTH
   GetPage(
@@ -62,6 +67,18 @@ List<GetPage> appRootRoutesFile = <GetPage>[
   GetPage(
     name: AppRoutes.instance.connnetStripeScreen,
     page: () => const ConnnetStripeScreen(),
+  ),
+
+  /// ========= Vendor Product Routes =========
+  GetPage(
+    name: AppRoutes.instance.vendorProductScreen,
+    binding: AppBinding(),
+    page: () => const VendorProductScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.vendorAddProductScreen,
+    binding: AppBinding(),
+    page: () => const VendorAddProductScreen(),
   ),
 
   /// ========= Vendor Earn And Payout Routes =========

@@ -5,11 +5,10 @@ class AppAssets {
 
   static const String google = "assets/icons/google.svg";
 
-  static const String nav1 = "assets/icons/dNav1.svg";
-  static const String nav2 = "assets/icons/dNav2.svg";
-  static const String nav3 = "assets/icons/dNav3.svg";
-  static const String nav4 = "assets/icons/dNav4.svg";
-  static const String nav5 = "assets/icons/dNav5.svg";
+  static const String nav1 = "assets/icons/dashboard.svg";
+  static const String nav2 = "assets/icons/product.svg";
+  static const String nav3 = "assets/icons/order.svg";
+  static const String nav4 = "assets/icons/delivery.svg";
 
   static const String earnAndPayout = "assets/icons/earnAndPayout.svg";
   static const String analytics = "assets/icons/analytics.svg";

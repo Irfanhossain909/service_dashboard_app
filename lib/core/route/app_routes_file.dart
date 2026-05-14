@@ -11,6 +11,8 @@ import 'package:service_dashboard_app/features/auth/register/presentation/ui/sig
 import 'package:service_dashboard_app/features/auth/register/presentation/ui/verify_otp_screen.dart';
 import 'package:service_dashboard_app/features/vendor/controller_management/presentation/ui/vendor_add_new_controller_screen.dart';
 import 'package:service_dashboard_app/features/vendor/controller_management/presentation/ui/vendor_controller_management_screen.dart';
+import 'package:service_dashboard_app/features/vendor/customer_management/presentation/ui/vendor_customer_details_screen.dart';
+import 'package:service_dashboard_app/features/vendor/customer_management/presentation/ui/vendor_customer_management_screen.dart';
 import 'package:service_dashboard_app/features/vendor/dashboard/presentation/ui/vendor_dashboard_screen.dart';
 import 'package:service_dashboard_app/features/vendor/legal/presentation/ui/vendor_legal_screen.dart';
 import 'package:service_dashboard_app/features/vendor/profile/presentation/ui/vendor_profile_screen.dart';
@@ -67,8 +69,6 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     page: () => const VendorDashboardScreen(),
   ),
 
-
-
   /// ========= Vendor Controller Management Routes =========
   GetPage(
     name: AppRoutes.instance.vendorControllerManagementScreen,
@@ -79,6 +79,18 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.vendorAddNewControllerScreen,
     binding: AppBinding(),
     page: () => const VendorAddNewControllerScreen(),
+  ),
+
+  /// ========= Vendor Customer Management Routes =========
+  GetPage(
+    name: AppRoutes.instance.vendorCustomerManagementScreen,
+    binding: AppBinding(),
+    page: () => const VendorCustomerManagementScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.vendorCustomerDetailsScreen,
+    binding: AppBinding(),
+    page: () => const VendorCustomerDetailsScreen(),
   ),
 
   /// ========= Vendor Profile Routes =========

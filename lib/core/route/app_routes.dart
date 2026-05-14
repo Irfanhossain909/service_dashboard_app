@@ -25,6 +25,10 @@ class AppRoutes {
   final String vendorControllerManagementScreen = "/vendor-controller-management-screen";
   final String vendorAddNewControllerScreen = "/vendor-add-new-controller-screen";
 
+  /// ========= Vendor Customer Management Routes =========
+  final String vendorCustomerManagementScreen = "/vendor-customer-management-screen";
+  final String vendorCustomerDetailsScreen = "/vendor-customer-details-screen";
+
 
 
 /// ========= Vendor Profile Routes =========

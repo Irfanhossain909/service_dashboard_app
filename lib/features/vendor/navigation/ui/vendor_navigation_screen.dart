@@ -7,6 +7,7 @@ import 'package:service_dashboard_app/core/const/app_assets.dart';
 import 'package:service_dashboard_app/core/const/app_color.dart';
 import 'package:service_dashboard_app/features/vendor/dashboard/presentation/ui/vendor_dashboard_screen.dart';
 import 'package:service_dashboard_app/features/vendor/navigation/controller/vendor_navigation_screen_controller.dart';
+import 'package:service_dashboard_app/features/vendor/order/presentation/ui/vendor_order_screen.dart';
 import 'package:service_dashboard_app/features/vendor/products/presentation/ui/vendor_product_screen.dart';
 
 class VendorNavigationScreen extends StatelessWidget {
@@ -24,7 +25,7 @@ class VendorNavigationScreen extends StatelessWidget {
               children: [
                 VendorDashboardScreen(),
                 VendorProductScreen(),
-                VendorDashboardScreen(),
+                VendorOrderScreen(),
                 VendorDashboardScreen(),
               ],
             ),
@@ -57,7 +58,12 @@ class VendorNavigationScreen extends StatelessWidget {
                     AppAssets.nav3,
                     AppAssets.nav4,
                   ];
-                  final textPaths = ["Dashboard", "Product", "Order", "Delivery"];
+                  final textPaths = [
+                    "Dashboard",
+                    "Product",
+                    "Order",
+                    "Delivery",
+                  ];
                   return InkWell(
                     onTap: () => controller.changeIndex(index),
                     child: Column(

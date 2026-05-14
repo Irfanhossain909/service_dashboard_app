@@ -19,6 +19,8 @@ import 'package:service_dashboard_app/features/vendor/dashboard/presentation/ui/
 import 'package:service_dashboard_app/features/vendor/earn_and_payout/presentation/ui/vendor_earn_and_payout_screen.dart';
 import 'package:service_dashboard_app/features/vendor/legal/presentation/ui/vendor_legal_screen.dart';
 import 'package:service_dashboard_app/features/vendor/navigation/ui/vendor_navigation_screen.dart';
+import 'package:service_dashboard_app/features/vendor/order/presentation/ui/vendor_order_details_screen.dart';
+import 'package:service_dashboard_app/features/vendor/order/presentation/ui/vendor_order_screen.dart';
 import 'package:service_dashboard_app/features/vendor/products/presentation/ui/vendor_add_product_screen.dart';
 import 'package:service_dashboard_app/features/vendor/products/presentation/ui/vendor_product_screen.dart';
 import 'package:service_dashboard_app/features/vendor/profile/presentation/ui/vendor_profile_screen.dart';
@@ -67,6 +69,18 @@ List<GetPage> appRootRoutesFile = <GetPage>[
   GetPage(
     name: AppRoutes.instance.connnetStripeScreen,
     page: () => const ConnnetStripeScreen(),
+  ),
+
+  /// ========= Vendor Order Routes =========
+  GetPage(
+    name: AppRoutes.instance.vendorOrderScreen,
+    binding: AppBinding(),
+    page: () => const VendorOrderScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.vendorOrderDetailsScreen,
+    binding: AppBinding(),
+    page: () => const VendorOrderDetailsScreen(),
   ),
 
   /// ========= Vendor Product Routes =========

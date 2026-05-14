@@ -21,5 +21,11 @@ class AppRoutes {
   /// ========= Vendor Routes =========
   final String vendorDashboardScreen = "/vendor-dashboard-screen";
 
+
+
+/// ========= Vendor Profile Routes =========
+  final String vendorLegalScreen = "/vendor-legal-screen";
   final String vendorSupportScreen = "/vendor-support-screen";
+  final String vendorSecurityScreen = "/vendor-security-screen";
+  final String vendorProfileScreen = "/vendor-profile-screen";
 }

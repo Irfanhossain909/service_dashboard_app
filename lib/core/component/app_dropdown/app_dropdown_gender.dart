@@ -15,6 +15,8 @@ class KeyValueDropdown extends StatelessWidget {
   final List<DropdownItemModel> items;
   final String? selectedKey;
   final String hint;
+
+  final Color? borderColor;
   final Function(String? key) onChanged;
 
   const KeyValueDropdown({
@@ -24,6 +26,7 @@ class KeyValueDropdown extends StatelessWidget {
     required this.onChanged,
     this.selectedKey,
     this.hint = 'Select',
+    this.borderColor,
   });
 
   @override
@@ -52,7 +55,9 @@ class KeyValueDropdown extends StatelessWidget {
 
     final border = OutlineInputBorder(
       borderRadius: BorderRadius.circular(12.r),
-      borderSide: BorderSide(color: AppColors.black.withValues(alpha: 0.2)),
+      borderSide: BorderSide(
+        color: borderColor ?? AppColors.black.withValues(alpha: 0.2),
+      ),
     );
 
     return Column(

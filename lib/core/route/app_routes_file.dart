@@ -10,6 +10,9 @@ import 'package:service_dashboard_app/features/auth/register/presentation/ui/bus
 import 'package:service_dashboard_app/features/auth/register/presentation/ui/signup_screen.dart';
 import 'package:service_dashboard_app/features/auth/register/presentation/ui/verify_otp_screen.dart';
 import 'package:service_dashboard_app/features/vendor/dashboard/presentation/ui/vendor_dashboard_screen.dart';
+import 'package:service_dashboard_app/features/vendor/legal/presentation/ui/vendor_legal_screen.dart';
+import 'package:service_dashboard_app/features/vendor/profile/presentation/ui/vendor_profile_screen.dart';
+import 'package:service_dashboard_app/features/vendor/security/presentation/ui/vendor_secuirity_screen.dart';
 import 'package:service_dashboard_app/features/vendor/support/presentation/ui/vendor_support_screen.dart';
 
 List<GetPage> appRootRoutesFile = <GetPage>[
@@ -61,9 +64,26 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     binding: AppBinding(),
     page: () => const VendorDashboardScreen(),
   ),
+
+  /// ========= Vendor Profile Routes =========
   GetPage(
     name: AppRoutes.instance.vendorSupportScreen,
     binding: AppBinding(),
     page: () => const VendorSupportScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.vendorLegalScreen,
+    binding: AppBinding(),
+    page: () => const VendorLegalScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.vendorSecurityScreen,
+    binding: AppBinding(),
+    page: () => const VendorSecuirityScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.vendorProfileScreen,
+    binding: AppBinding(),
+    page: () => const VendorProfileScreen(),
   ),
 ];

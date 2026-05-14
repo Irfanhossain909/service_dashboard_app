@@ -37,7 +37,7 @@ class AppInputWidgetTwo extends StatefulWidget {
     this.filled = true,
     this.borderColor,
 
-    /// NEW
+    /// DESCRIPTION
     this.isDescription = false,
     this.height,
 
@@ -46,7 +46,7 @@ class AppInputWidgetTwo extends StatefulWidget {
     this.titleColor,
     this.titleFontWeight,
 
-    /// ✅ NEW PARAMS
+    /// TEXT & HINT
     this.hintColor,
     this.textColor,
   });
@@ -82,14 +82,18 @@ class AppInputWidgetTwo extends StatefulWidget {
   final FormFieldValidator<String>? validator;
   final Color? borderColor;
 
+  /// DESCRIPTION
   final bool isDescription;
+
+  /// default 120.h when isDescription = true
   final double? height;
 
+  /// TITLE STYLE
   final double? titleFontSize;
   final Color? titleColor;
   final FontWeight? titleFontWeight;
 
-  /// ✅ NEW
+  /// TEXT & HINT
   final Color? hintColor;
   final Color? textColor;
 
@@ -105,8 +109,10 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
     final Color effectiveBorderColor =
         widget.borderColor ?? Colors.black.withValues(alpha: .2);
 
-    final double? effectiveHeight =
-        widget.height ?? (widget.isDescription ? 74.h : null);
+    /// ✅ DESCRIPTION HEIGHT DEFAULT 120
+    final double? effectiveHeight = widget.isDescription
+        ? (widget.height ?? 120.h)
+        : widget.height;
 
     final Color effectiveTextColor = widget.textColor ?? Colors.black;
 
@@ -118,7 +124,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
       shadowColor: widget.elevationColor,
       borderOnForeground: false,
       color: Colors.transparent,
-      borderRadius: BorderRadius.circular(widget.borderRadius ?? 8.0),
+      borderRadius: BorderRadius.circular(widget.borderRadius ?? 8.r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -127,23 +133,25 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
               children: [
                 Text(
                   widget.title!,
-                  style: GoogleFonts.jost().copyWith(
+                  style: GoogleFonts.jost(
                     fontSize: widget.titleFontSize ?? 14.sp,
                     color: widget.titleColor ?? Colors.black,
-                    fontWeight: widget.titleFontWeight ?? FontWeight.w500,
+                    fontWeight: widget.titleFontWeight ?? FontWeight.w400,
                   ),
                 ),
                 if (!widget.isOptional)
                   Text(
                     ' *',
-                    style: GoogleFonts.jost().copyWith(
+                    style: GoogleFonts.jost(
                       color: widget.titleColor ?? Colors.black,
                       fontSize: widget.titleFontSize ?? 14.sp,
                     ),
                   ),
               ],
             ),
-          const SizedBox(height: 8),
+
+          SizedBox(height: 8.h),
+
           SizedBox(
             height: effectiveHeight,
             child: TextFormField(
@@ -153,40 +161,65 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
               onFieldSubmitted: widget.onFieldSubmitted,
               readOnly: widget.readOnly,
               controller: widget.controller,
-              minLines: widget.isDescription ? 3 : widget.minLines,
-              maxLines: widget.isDescription ? null : widget.maxLines ?? 1,
+
+              /// ✅ DESCRIPTION SETTINGS
+              minLines: widget.isDescription ? null : widget.minLines,
+
+              maxLines: widget.isDescription ? null : (widget.maxLines ?? 1),
+
+              expands: widget.isDescription,
+
               validator: widget.validator,
+
               keyboardType: widget.isEmail
                   ? TextInputType.emailAddress
                   : widget.keyboardType,
+
               textInputAction: widget.textInputAction,
+
               obscureText: widget.isPassWord && isShowPassWord,
+
               autovalidateMode: AutovalidateMode.onUserInteraction,
+
               obscuringCharacter: "*",
-              textAlignVertical:
-                  widget.textAlignVertical ?? TextAlignVertical.center,
+
+              /// ✅ TOP START TEXT
+              textAlignVertical: widget.isDescription
+                  ? TextAlignVertical.top
+                  : (widget.textAlignVertical ?? TextAlignVertical.center),
+
               style:
                   widget.style ??
-                  GoogleFonts.jost().copyWith(
+                  GoogleFonts.jost(
                     height: 1.5,
                     fontWeight: FontWeight.w400,
                     color: effectiveTextColor,
+                    fontSize: 14.sp,
                   ),
+
               decoration: InputDecoration(
                 hintText: widget.hintText,
-                hintStyle: GoogleFonts.jost().copyWith(
+
+                hintStyle: GoogleFonts.jost(
                   fontSize: 14.sp,
                   color: effectiveHintColor,
                 ),
+
                 filled: widget.filled,
+
                 fillColor: widget.fillColor ?? Colors.transparent,
+
+                /// ✅ DESCRIPTION PADDING
                 contentPadding:
                     widget.contentPadding ??
-                    const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                    EdgeInsets.symmetric(
+                      vertical: widget.isDescription ? 14.h : 12.h,
+                      horizontal: 12.w,
+                    ),
 
                 prefixIcon: widget.prefix != null
                     ? Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
+                        padding: const EdgeInsets.only(left: 8),
                         child: widget.prefix,
                       )
                     : null,
@@ -195,7 +228,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
                     ? IconButton(
                         color: effectiveBorderColor,
                         padding: EdgeInsets.zero,
-                        iconSize: 18,
+                        iconSize: 18.sp,
                         onPressed: () {
                           setState(() {
                             isShowPassWord = !isShowPassWord;
@@ -204,15 +237,11 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
                         icon: isShowPassWord
                             ? Icon(
                                 Icons.visibility,
-                                color: AppColors.backgrounColor.withValues(
-                                  alpha: 0.4,
-                                ),
+                                color: AppColors.brown.withValues(alpha: 0.4),
                               )
                             : Icon(
                                 Icons.visibility_off,
-                                color: AppColors.backgrounColor.withValues(
-                                  alpha: 0.4,
-                                ),
+                                color: AppColors.brown.withValues(alpha: 0.4),
                               ),
                       )
                     : widget.suffixIcon,
@@ -220,6 +249,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
                 prefixIconConstraints:
                     widget.prefixIconConstraints ??
                     const BoxConstraints(maxWidth: 40, maxHeight: 40),
+
                 suffixIconConstraints:
                     widget.suffixIconConstraints ??
                     const BoxConstraints(maxWidth: 40, maxHeight: 40),
@@ -227,34 +257,38 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
                 border: OutlineInputBorder(
                   borderSide: BorderSide(color: effectiveBorderColor),
                   borderRadius: BorderRadius.circular(
-                    widget.borderRadius ?? 12,
+                    widget.borderRadius ?? 12.r,
                   ),
                 ),
+
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: effectiveBorderColor),
                   borderRadius: BorderRadius.circular(
-                    widget.borderRadius ?? 12,
+                    widget.borderRadius ?? 12.r,
                   ),
                 ),
+
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: effectiveBorderColor,
                     width: 1.5,
                   ),
                   borderRadius: BorderRadius.circular(
-                    widget.borderRadius ?? 12,
+                    widget.borderRadius ?? 12.r,
                   ),
                 ),
+
                 errorBorder: OutlineInputBorder(
                   borderSide: const BorderSide(color: Colors.red),
                   borderRadius: BorderRadius.circular(
-                    widget.borderRadius ?? 12,
+                    widget.borderRadius ?? 12.r,
                   ),
                 ),
+
                 focusedErrorBorder: OutlineInputBorder(
                   borderSide: const BorderSide(color: Colors.red),
                   borderRadius: BorderRadius.circular(
-                    widget.borderRadius ?? 12,
+                    widget.borderRadius ?? 12.r,
                   ),
                 ),
               ),
@@ -269,6 +303,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
 // import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:google_fonts/google_fonts.dart';
+// import 'package:service_dashboard_app/core/const/app_color.dart';
 
 // class AppInputWidgetTwo extends StatefulWidget {
 //   const AppInputWidgetTwo({
@@ -304,14 +339,18 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
 //     this.filled = true,
 //     this.borderColor,
 
-//     /// ✅ NEW PARAMS
+//     /// NEW
 //     this.isDescription = false,
 //     this.height,
 
-//     /// ✅ TITLE CUSTOM PARAMS
+//     /// TITLE STYLE
 //     this.titleFontSize,
 //     this.titleColor,
 //     this.titleFontWeight,
+
+//     /// ✅ NEW PARAMS
+//     this.hintColor,
+//     this.textColor,
 //   });
 
 //   final String? hintText;
@@ -345,14 +384,16 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
 //   final FormFieldValidator<String>? validator;
 //   final Color? borderColor;
 
-//   /// NEW
 //   final bool isDescription;
 //   final double? height;
 
-//   /// ✅ TITLE STYLE PARAMS
 //   final double? titleFontSize;
 //   final Color? titleColor;
 //   final FontWeight? titleFontWeight;
+
+//   /// ✅ NEW
+//   final Color? hintColor;
+//   final Color? textColor;
 
 //   @override
 //   State<AppInputWidgetTwo> createState() => _AppInputWidgetTwoState();
@@ -363,10 +404,16 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
 
 //   @override
 //   Widget build(BuildContext context) {
-//     final Color effectiveBorderColor = widget.borderColor ?? Colors.white;
+//     final Color effectiveBorderColor =
+//         widget.borderColor ?? Colors.black.withValues(alpha: .2);
 
 //     final double? effectiveHeight =
-//         widget.height ?? (widget.isDescription ? 88.h : null);
+//         widget.height ?? (widget.isDescription ? 74.h : null);
+
+//     final Color effectiveTextColor = widget.textColor ?? Colors.black;
+
+//     final Color effectiveHintColor =
+//         widget.hintColor ?? Colors.black.withValues(alpha: .4);
 
 //     return Material(
 //       elevation: widget.elevation,
@@ -384,7 +431,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
 //                   widget.title!,
 //                   style: GoogleFonts.jost().copyWith(
 //                     fontSize: widget.titleFontSize ?? 14.sp,
-//                     color: widget.titleColor ?? Colors.white,
+//                     color: widget.titleColor ?? Colors.black,
 //                     fontWeight: widget.titleFontWeight ?? FontWeight.w500,
 //                   ),
 //                 ),
@@ -392,7 +439,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
 //                   Text(
 //                     ' *',
 //                     style: GoogleFonts.jost().copyWith(
-//                       color: Colors.white,
+//                       color: widget.titleColor ?? Colors.black,
 //                       fontSize: widget.titleFontSize ?? 14.sp,
 //                     ),
 //                   ),
@@ -425,25 +472,27 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
 //                   GoogleFonts.jost().copyWith(
 //                     height: 1.5,
 //                     fontWeight: FontWeight.w400,
-//                     color: Colors.white,
+//                     color: effectiveTextColor,
 //                   ),
 //               decoration: InputDecoration(
 //                 hintText: widget.hintText,
 //                 hintStyle: GoogleFonts.jost().copyWith(
 //                   fontSize: 14.sp,
-//                   color: Colors.white.withValues(alpha: .4),
+//                   color: effectiveHintColor,
 //                 ),
 //                 filled: widget.filled,
 //                 fillColor: widget.fillColor ?? Colors.transparent,
 //                 contentPadding:
 //                     widget.contentPadding ??
 //                     const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+
 //                 prefixIcon: widget.prefix != null
 //                     ? Padding(
 //                         padding: const EdgeInsets.only(left: 8.0),
 //                         child: widget.prefix,
 //                       )
 //                     : null,
+
 //                 suffixIcon: widget.isPassWord
 //                     ? IconButton(
 //                         color: effectiveBorderColor,
@@ -455,16 +504,24 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
 //                           });
 //                         },
 //                         icon: isShowPassWord
-//                             ? const Icon(Icons.visibility)
-//                             : const Icon(Icons.visibility_off),
+//                             ? Icon(
+//                                 Icons.visibility,
+//                                 color: AppColors.brown.withValues(alpha: 0.4),
+//                               )
+//                             : Icon(
+//                                 Icons.visibility_off,
+//                                 color: AppColors.brown.withValues(alpha: 0.4),
+//                               ),
 //                       )
 //                     : widget.suffixIcon,
+
 //                 prefixIconConstraints:
 //                     widget.prefixIconConstraints ??
 //                     const BoxConstraints(maxWidth: 40, maxHeight: 40),
 //                 suffixIconConstraints:
 //                     widget.suffixIconConstraints ??
 //                     const BoxConstraints(maxWidth: 40, maxHeight: 40),
+
 //                 border: OutlineInputBorder(
 //                   borderSide: BorderSide(color: effectiveBorderColor),
 //                   borderRadius: BorderRadius.circular(

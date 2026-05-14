@@ -90,17 +90,23 @@ class VendorDashboardScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       MenuBarItems(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(AppRoutes.instance.vendorProfileScreen);
+                        },
                         icon: AppAssets.profile,
                         title: "Profile",
                       ),
                       MenuBarItems(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(AppRoutes.instance.vendorSecurityScreen);
+                        },
                         icon: AppAssets.analytics,
                         title: "Security",
                       ),
                       MenuBarItems(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(AppRoutes.instance.vendorLegalScreen);
+                        },
                         icon: AppAssets.legal,
                         title: "Legal",
                       ),

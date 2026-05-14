@@ -13,11 +13,14 @@ class AppAssets {
 
   static const String earnAndPayout = "assets/icons/earnAndPayout.svg";
   static const String analytics = "assets/icons/analytics.svg";
-  static const String customerManagement = "assets/icons/customerManagement.svg";
-  static const String controllerManagement = "assets/icons/controllerManagement.svg";
+  static const String customerManagement =
+      "assets/icons/customerManagement.svg";
+  static const String controllerManagement =
+      "assets/icons/controllerManagement.svg";
   static const String profile = "assets/icons/profile.svg";
   static const String security = "assets/icons/security.svg";
   static const String legal = "assets/icons/legal.svg";
   static const String support = "assets/icons/support.svg";
   static const String logout = "assets/icons/logout.svg";
+  static const String editIcon = "assets/icons/edit.svg";
 }

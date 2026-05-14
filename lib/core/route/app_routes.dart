@@ -7,7 +7,7 @@ class AppRoutes {
   final String onBoardingScreen = "/onboarding-screen";
   final String roleScreen = "/role-screen";
 
-  // ======== Customer Routes ========
+  // ======== Vendor Routes ========
 
   ///// AUTH
   final String loginScreen = "/login-screen";
@@ -20,6 +20,13 @@ class AppRoutes {
 
   /// ========= Vendor Routes =========
   final String vendorDashboardScreen = "/vendor-dashboard-screen";
+
+  /// ========= Vendor Earn And Payout Routes =========
+  final String vendorEarnAndPayoutScreen = "/vendor-earn-and-payout-screen";
+
+
+  /// ========= Vendor Analytics Routes =========
+  final String vendorAnalyticsScreen = "/vendor-analytics-screen";
 
   /// ========= Vendor Controller Management Routes =========
   final String vendorControllerManagementScreen = "/vendor-controller-management-screen";

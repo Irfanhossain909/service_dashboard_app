@@ -49,12 +49,16 @@ class VendorDashboardScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       MenuBarItems(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(AppRoutes.instance.vendorEarnAndPayoutScreen);
+                        },
                         icon: AppAssets.earnAndPayout,
                         title: "Earning & Payouts",
                       ),
                       MenuBarItems(
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(AppRoutes.instance.vendorAnalyticsScreen);
+                        },
                         icon: AppAssets.analytics,
                         title: "Analytics",
                       ),

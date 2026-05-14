@@ -65,7 +65,9 @@ class VendorDashboardScreen extends StatelessWidget {
                       ),
                       MenuBarItems(
                         isLastItem: true,
-                        onTap: () {},
+                        onTap: () {
+                          Get.toNamed(AppRoutes.instance.vendorControllerManagementScreen);
+                        },
                         icon: AppAssets.controllerManagement,
                         title: "Controller Management",
                       ),

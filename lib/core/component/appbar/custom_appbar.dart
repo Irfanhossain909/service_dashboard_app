@@ -25,6 +25,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      surfaceTintColor: AppColors.backgrounColor,
       title: AppText(
         data: text ?? "", // Use passed 'text' or default to "Profile"
         fontSize: 18.sp,

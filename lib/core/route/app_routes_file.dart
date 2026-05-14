@@ -9,6 +9,8 @@ import 'package:service_dashboard_app/features/auth/login/presentation/ui/reset_
 import 'package:service_dashboard_app/features/auth/register/presentation/ui/business_details_screen.dart';
 import 'package:service_dashboard_app/features/auth/register/presentation/ui/signup_screen.dart';
 import 'package:service_dashboard_app/features/auth/register/presentation/ui/verify_otp_screen.dart';
+import 'package:service_dashboard_app/features/vendor/controller_management/presentation/ui/vendor_add_new_controller_screen.dart';
+import 'package:service_dashboard_app/features/vendor/controller_management/presentation/ui/vendor_controller_management_screen.dart';
 import 'package:service_dashboard_app/features/vendor/dashboard/presentation/ui/vendor_dashboard_screen.dart';
 import 'package:service_dashboard_app/features/vendor/legal/presentation/ui/vendor_legal_screen.dart';
 import 'package:service_dashboard_app/features/vendor/profile/presentation/ui/vendor_profile_screen.dart';
@@ -63,6 +65,20 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.vendorDashboardScreen,
     binding: AppBinding(),
     page: () => const VendorDashboardScreen(),
+  ),
+
+
+
+  /// ========= Vendor Controller Management Routes =========
+  GetPage(
+    name: AppRoutes.instance.vendorControllerManagementScreen,
+    binding: AppBinding(),
+    page: () => const VendorControllerManagementScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.vendorAddNewControllerScreen,
+    binding: AppBinding(),
+    page: () => const VendorAddNewControllerScreen(),
   ),
 
   /// ========= Vendor Profile Routes =========

@@ -9,6 +9,21 @@ class AppRoutes {
 
   /// ========= Navigation Routes =========
   final String vendorNavigationScreen = "/vendor-navigation-screen";
+  final String providerNavigationScreen = "/provider-navigation-screen";
+
+  /// ========= Provider Delivery Management Routes =========
+  final String providerDeliveryManagementScreen =
+      "/provider-delivery-management-screen";
+  final String providerDeliveryManagementDetailsScreen =
+      "/provider-delivery-management-details-screen";
+
+  /// ========= Provider Order Routes =========
+  final String providerOrderScreen = "/provider-order-screen";
+  final String providerAppServicesScreen = "/provider-app-services-screen";
+
+  /// ========= Provider Bookings Routes =========
+  final String providerBookingScreen = "/provider-booking-screen";
+  final String providerBookingDetailsScreen = "/provider-booking-details-screen";
 
   /// ========= Vendor Delivery Management Routes =========
   final String vendorDeliveryManagementScreen = "/vendor-delivery-management-screen";
@@ -35,6 +50,33 @@ class AppRoutes {
 
   /// ========= Vendor Routes =========
   final String vendorDashboardScreen = "/vendor-dashboard-screen";
+
+  /// ========= Provider Routes =========
+  final String providerDashboardScreen = "/provider-dashboard-screen";
+
+  /// ========= Provider Earn And Payout Routes =========
+  final String providerEarnAndPayoutScreen = "/provider-earn-and-payout-screen";
+
+  /// ========= Provider Analytics Routes =========
+  final String providerAnalyticsScreen = "/provider-analytics-screen";
+
+  /// ========= Provider Controller Management Routes =========
+  final String providerControllerManagementScreen =
+      "/provider-controller-management-screen";
+  final String providerAddNewControllerScreen =
+      "/provider-add-new-controller-screen";
+
+  /// ========= Provider Customer Management Routes =========
+  final String providerCustomerManagementScreen =
+      "/provider-customer-management-screen";
+  final String providerCustomerDetailsScreen =
+      "/provider-customer-details-screen";
+
+  /// ========= Provider Profile Routes =========
+  final String providerLegalScreen = "/provider-legal-screen";
+  final String providerSupportScreen = "/provider-support-screen";
+  final String providerSecurityScreen = "/provider-security-screen";
+  final String providerProfileScreen = "/provider-profile-screen";
 
   /// ========= Vendor Earn And Payout Routes =========
   final String vendorEarnAndPayoutScreen = "/vendor-earn-and-payout-screen";

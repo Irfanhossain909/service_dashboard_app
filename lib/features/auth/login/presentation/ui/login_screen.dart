@@ -141,13 +141,12 @@ class LoginScreen extends StatelessWidget {
                       final role = GetStorageServices.instance.getRole();
                       if (role == "vendor") {
                         Get.toNamed(AppRoutes.instance.vendorNavigationScreen);
+                      } else if (role == "service_provider") {
+                        Get.toNamed(AppRoutes.instance.providerNavigationScreen);
                       } else {
-                        // Get.toNamed(
-                        //   // AppRoutes.instance.serviceProviderDashboardScreen,
-                        // );
                         Get.snackbar(
                           "Error",
-                          "Service Provider Dashboard Screen is not available yet",
+                          "Please select Vendor or Service Provider",
                         );
                       }
                     },

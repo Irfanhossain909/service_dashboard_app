@@ -9,6 +9,9 @@ class AppAssets {
   static const String nav2 = "assets/icons/product.svg";
   static const String nav3 = "assets/icons/order.svg";
   static const String nav4 = "assets/icons/delivery.svg";
+  static const String nav5 = "assets/icons/navBokking.svg";
+  static const String nav6 = "assets/icons/navService.svg";
+  static const String nav7 = "assets/icons/navMessage.svg";
 
   static const String earnAndPayout = "assets/icons/earnAndPayout.svg";
   static const String analytics = "assets/icons/analytics.svg";

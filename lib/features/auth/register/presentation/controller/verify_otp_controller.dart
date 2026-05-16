@@ -22,13 +22,12 @@ class VerifyOtpController extends GetxController {
     // Fake delay (API simulate)
     Future.delayed(const Duration(seconds: 2), () {
       isLoading.value = false;
-      if (role == "vendor") {
+      if (role == "vendor" || role == "service_provider") {
         Get.toNamed(AppRoutes.instance.businessDetailsScreen);
       } else {
-        // Get.toNamed(AppRoutes.instance.serviceProviderDetailsScreen);
         Get.snackbar(
           "Error",
-          "Service Provider Details Screen is not available yet",
+          "Please select Vendor or Service Provider",
         );
       }
       Get.snackbar("Success", "OTP Verified Successful");

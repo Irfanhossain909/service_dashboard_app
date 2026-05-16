@@ -95,7 +95,7 @@ class KeyValueDropdown extends StatelessWidget {
 
           onChanged: onChanged,
 
-          dropdownColor: AppColors.nevColor,
+          dropdownColor: AppColors.backgrounColor,
 
           icon: Icon(
             Icons.keyboard_arrow_down_rounded,

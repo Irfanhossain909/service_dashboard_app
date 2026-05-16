@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:service_dashboard_app/core/component/appbar/custom_appbar.dart';
+import 'package:service_dashboard_app/core/component/app_text/app_text.dart';
 import 'package:service_dashboard_app/core/route/app_routes.dart';
+import 'package:service_dashboard_app/features/vendor/dashboard/presentation/ui/vendor_dashboard_screen.dart';
 import 'package:service_dashboard_app/features/vendor/order/presentation/widget/order_screen_table.dart';
 
 class VendorOrderScreen extends StatelessWidget {
@@ -11,7 +12,15 @@ class VendorOrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(text: "Orders", showLeading: false),
+      appBar: AppBar(
+            title: AppText(
+              data: "Orders",
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w700,
+              color: Colors.black,
+            ),
+          ),
+          drawer: const VendorDrawer(),
       body: Padding(
         padding: EdgeInsets.all(16.r),
         child: Column(

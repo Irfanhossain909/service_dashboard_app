@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:service_dashboard_app/core/component/app_text/app_text.dart';
-import 'package:service_dashboard_app/core/component/appbar/custom_appbar.dart';
 import 'package:service_dashboard_app/core/const/app_color.dart';
 import 'package:service_dashboard_app/core/route/app_routes.dart';
+import 'package:service_dashboard_app/features/vendor/dashboard/presentation/ui/vendor_dashboard_screen.dart';
 import 'package:service_dashboard_app/features/vendor/delivery/presentation/controller/vendor_delivery_management_controller.dart';
 
 class VendorDeliveryManagementScreen extends StatelessWidget {
@@ -16,8 +16,15 @@ class VendorDeliveryManagementScreen extends StatelessWidget {
       init: VendorDeliveryManagementController(),
       builder: (controller) {
         return Scaffold(
-          appBar: CustomAppbar(text: "Delivery Management"),
-
+          appBar: AppBar(
+            title: AppText(
+              data: "Delivery Management",
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w700,
+              color: Colors.black,
+            ),
+          ),
+          drawer: const VendorDrawer(),
           body: Column(
             children: [
               Container(
@@ -138,7 +145,9 @@ class DeliveryLocalCard extends StatelessWidget {
 
           GestureDetector(
             onTap: () {
-              Get.toNamed(AppRoutes.instance.vendorDeliveryManagementDetailsScreen);
+              Get.toNamed(
+                AppRoutes.instance.vendorDeliveryManagementDetailsScreen,
+              );
             },
             child: Container(
               width: 110.w,

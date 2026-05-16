@@ -25,130 +25,7 @@ class VendorDashboardScreen extends StatelessWidget {
           color: Colors.black,
         ),
       ),
-      drawer: Drawer(
-        width: 255.w,
-
-        backgroundColor: AppColors.backgrounColor,
-        child: SafeArea(
-          child: Container(
-            padding: EdgeInsets.all(12.r),
-            decoration: BoxDecoration(color: AppColors.backgrounColor),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AppText(
-                  data: "Menu",
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.black,
-                ),
-                SizedBox(height: 12.h),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: AppColors.black.withValues(alpha: 0.2),
-                    ),
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: Column(
-                    children: [
-                      MenuBarItems(
-                        onTap: () {
-                          Get.toNamed(
-                            AppRoutes.instance.vendorEarnAndPayoutScreen,
-                          );
-                        },
-                        icon: AppAssets.earnAndPayout,
-                        title: "Earning & Payouts",
-                      ),
-                      MenuBarItems(
-                        onTap: () {
-                          Get.toNamed(AppRoutes.instance.vendorAnalyticsScreen);
-                        },
-                        icon: AppAssets.analytics,
-                        title: "Analytics",
-                      ),
-                      MenuBarItems(
-                        onTap: () {
-                          Get.toNamed(
-                            AppRoutes.instance.vendorCustomerManagementScreen,
-                          );
-                        },
-                        icon: AppAssets.customerManagement,
-                        title: "Customer Management",
-                      ),
-                      MenuBarItems(
-                        isLastItem: true,
-                        onTap: () {
-                          Get.toNamed(
-                            AppRoutes.instance.vendorControllerManagementScreen,
-                          );
-                        },
-                        icon: AppAssets.controllerManagement,
-                        title: "Controller Management",
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 24.h),
-                AppText(
-                  data: "Settings",
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.black,
-                ),
-                SizedBox(height: 12.h),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: AppColors.black.withValues(alpha: 0.2),
-                    ),
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: Column(
-                    children: [
-                      MenuBarItems(
-                        onTap: () {
-                          Get.toNamed(AppRoutes.instance.vendorProfileScreen);
-                        },
-                        icon: AppAssets.profile,
-                        title: "Profile",
-                      ),
-                      MenuBarItems(
-                        onTap: () {
-                          Get.toNamed(AppRoutes.instance.vendorSecurityScreen);
-                        },
-                        icon: AppAssets.analytics,
-                        title: "Security",
-                      ),
-                      MenuBarItems(
-                        onTap: () {
-                          Get.toNamed(AppRoutes.instance.vendorLegalScreen);
-                        },
-                        icon: AppAssets.legal,
-                        title: "Legal",
-                      ),
-                      MenuBarItems(
-                        onTap: () async {
-                          Get.toNamed(AppRoutes.instance.vendorSupportScreen);
-                        },
-                        icon: AppAssets.support,
-                        title: "Support",
-                      ),
-                      MenuBarItems(
-                        isLastItem: true,
-                        onTap: () {},
-                        icon: AppAssets.logout,
-                        title: "Logout",
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+      drawer: const VendorDrawer(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: SingleChildScrollView(
@@ -227,6 +104,140 @@ class VendorDashboardScreen extends StatelessWidget {
               ActiveDeliveryCard(),
               ActiveDeliveryCard(),
               ActiveDeliveryCard(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class VendorDrawer extends StatelessWidget {
+  const VendorDrawer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      width: 255.w,
+    
+      backgroundColor: AppColors.backgrounColor,
+      child: SafeArea(
+        child: Container(
+          padding: EdgeInsets.all(12.r),
+          decoration: BoxDecoration(color: AppColors.backgrounColor),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AppText(
+                data: "Menu",
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w700,
+                color: AppColors.black,
+              ),
+              SizedBox(height: 12.h),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: AppColors.black.withValues(alpha: 0.2),
+                  ),
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+                child: Column(
+                  children: [
+                    MenuBarItems(
+                      onTap: () {
+                        Get.toNamed(
+                          AppRoutes.instance.vendorEarnAndPayoutScreen,
+                        );
+                      },
+                      icon: AppAssets.earnAndPayout,
+                      title: "Earning & Payouts",
+                    ),
+                    MenuBarItems(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.instance.vendorAnalyticsScreen);
+                      },
+                      icon: AppAssets.analytics,
+                      title: "Analytics",
+                    ),
+                    MenuBarItems(
+                      onTap: () {
+                        Get.toNamed(
+                          AppRoutes.instance.vendorCustomerManagementScreen,
+                        );
+                      },
+                      icon: AppAssets.customerManagement,
+                      title: "Customer Management",
+                    ),
+                    MenuBarItems(
+                      isLastItem: true,
+                      onTap: () {
+                        Get.toNamed(
+                          AppRoutes.instance.vendorControllerManagementScreen,
+                        );
+                      },
+                      icon: AppAssets.controllerManagement,
+                      title: "Controller Management",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24.h),
+              AppText(
+                data: "Settings",
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w700,
+                color: AppColors.black,
+              ),
+              SizedBox(height: 12.h),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: AppColors.black.withValues(alpha: 0.2),
+                  ),
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+                child: Column(
+                  children: [
+                    MenuBarItems(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.instance.vendorProfileScreen);
+                      },
+                      icon: AppAssets.profile,
+                      title: "Profile",
+                    ),
+                    MenuBarItems(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.instance.vendorSecurityScreen);
+                      },
+                      icon: AppAssets.analytics,
+                      title: "Security",
+                    ),
+                    MenuBarItems(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.instance.vendorLegalScreen);
+                      },
+                      icon: AppAssets.legal,
+                      title: "Legal",
+                    ),
+                    MenuBarItems(
+                      onTap: () async {
+                        Get.toNamed(AppRoutes.instance.vendorSupportScreen);
+                      },
+                      icon: AppAssets.support,
+                      title: "Support",
+                    ),
+                    MenuBarItems(
+                      isLastItem: true,
+                      onTap: () {},
+                      icon: AppAssets.logout,
+                      title: "Logout",
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

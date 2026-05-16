@@ -76,6 +76,11 @@ class AppRoutes {
   final String providerSupportScreen = "/provider-support-screen";
   final String providerSecurityScreen = "/provider-security-screen";
   final String providerProfileScreen = "/provider-profile-screen";
+  final String providerProfileMainScreen = "/provider-profile-main-screen";
+  final String providerBusinessProfileScreen = "/provider-business-profile-screen";
+  final String providerProfessionalProfileScreen =
+      "/provider-professional-profile-screen";
+  final String providerServiceProfileScreen = "/provider-service-profile-screen";
 
   /// ========= Vendor Earn And Payout Routes =========
   final String vendorEarnAndPayoutScreen = "/vendor-earn-and-payout-screen";

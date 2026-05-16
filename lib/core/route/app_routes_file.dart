@@ -12,6 +12,7 @@ import 'package:service_dashboard_app/features/auth/register/presentation/ui/bus
 import 'package:service_dashboard_app/features/auth/register/presentation/ui/signup_screen.dart';
 import 'package:service_dashboard_app/features/auth/register/presentation/ui/verify_otp_screen.dart';
 import 'package:service_dashboard_app/features/provider/boking/presentation/ui/provider_booking_details_screen.dart';
+import 'package:service_dashboard_app/features/provider/profile/presentation/ui/provider_profile_main_screen.dart';
 import 'package:service_dashboard_app/features/vendor/analytics/presentation/ui/vendor_analytics_screen.dart';
 import 'package:service_dashboard_app/features/vendor/controller_management/presentation/ui/vendor_add_new_controller_screen.dart';
 import 'package:service_dashboard_app/features/vendor/controller_management/presentation/ui/vendor_controller_management_screen.dart';
@@ -42,7 +43,10 @@ import 'package:service_dashboard_app/features/provider/navigation/ui/provider_n
 import 'package:service_dashboard_app/features/provider/service/presentation/ui/provider_add_services_screen.dart';
 import 'package:service_dashboard_app/features/provider/service/presentation/ui/provider_service_screen.dart';
 import 'package:service_dashboard_app/features/provider/boking/presentation/ui/provider_booking_screen.dart';
-import 'package:service_dashboard_app/features/provider/profile/presentation/ui/provider_profile_screen.dart';
+import 'package:service_dashboard_app/features/provider/profile/presentation/ui/provider_business_profile_screen.dart';
+import 'package:service_dashboard_app/features/provider/profile/presentation/ui/provider_personal_profile_screen.dart';
+import 'package:service_dashboard_app/features/provider/profile/presentation/ui/provider_professional_profile_screen.dart';
+import 'package:service_dashboard_app/features/provider/profile/presentation/ui/provider_service_profile_screen.dart';
 import 'package:service_dashboard_app/features/provider/security/presentation/ui/provider_security_screen.dart';
 import 'package:service_dashboard_app/features/provider/support/presentation/ui/provider_support_screen.dart';
 import 'package:service_dashboard_app/features/provider/message/presentation/ui/provider_message_screen.dart';
@@ -206,7 +210,7 @@ List<GetPage> appRootRoutesFile = <GetPage>[
   GetPage(
     name: AppRoutes.instance.providerOrderScreen,
     binding: AppBinding(),
-    page: () => const ProviderServiceScreen(),
+    page: () => const ProviderServiceScreen()
   ),
   GetPage(
     name: AppRoutes.instance.providerAppServicesScreen,
@@ -302,6 +306,26 @@ List<GetPage> appRootRoutesFile = <GetPage>[
   GetPage(
     name: AppRoutes.instance.providerProfileScreen,
     binding: AppBinding(),
-    page: () => const ProviderProfileScreen(),
+    page: () => const ProviderPersonalProfileScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.providerBusinessProfileScreen,
+    binding: AppBinding(),
+    page: () => const ProviderBusinessProfileScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.providerProfessionalProfileScreen,
+    binding: AppBinding(),
+    page: () => const ProviderProfessionalProfileScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.providerServiceProfileScreen,
+    binding: AppBinding(),
+    page: () => const ProviderServiceProfileScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.providerProfileMainScreen,
+    binding: AppBinding(),
+    page: () => const ProviderProfileMainScreen(),
   ),
 ];

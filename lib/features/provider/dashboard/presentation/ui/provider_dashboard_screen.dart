@@ -203,7 +203,8 @@ class ProviderDrawer extends StatelessWidget {
                   children: [
                     MenuBarItems(
                       onTap: () {
-                        Get.toNamed(AppRoutes.instance.providerProfileScreen);
+                        Get.toNamed(AppRoutes.instance.providerProfileMainScreen);
+                        // Get.toNamed(AppRoutes.instance.providerProfileScreen);
                       },
                       icon: AppAssets.profile,
                       title: "Profile",

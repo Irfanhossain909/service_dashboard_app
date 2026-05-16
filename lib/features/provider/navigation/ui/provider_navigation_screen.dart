@@ -6,10 +6,10 @@ import 'package:service_dashboard_app/core/component/app_text/app_text.dart';
 import 'package:service_dashboard_app/core/const/app_assets.dart';
 import 'package:service_dashboard_app/core/const/app_color.dart';
 import 'package:service_dashboard_app/features/provider/dashboard/presentation/ui/provider_dashboard_screen.dart';
-import 'package:service_dashboard_app/features/provider/delivery/presentation/ui/provider_delivery_management_screen.dart';
 import 'package:service_dashboard_app/features/provider/navigation/controller/provider_navigation_screen_controller.dart';
 import 'package:service_dashboard_app/features/provider/service/presentation/ui/provider_service_screen.dart';
 import 'package:service_dashboard_app/features/provider/boking/presentation/ui/provider_booking_screen.dart';
+import 'package:service_dashboard_app/features/provider/message/presentation/ui/provider_message_screen.dart';
 
 class ProviderNavigationScreen extends StatelessWidget {
   const ProviderNavigationScreen({super.key});
@@ -27,7 +27,7 @@ class ProviderNavigationScreen extends StatelessWidget {
                 ProviderDashboardScreen(),
                 ProviderBookingScreen(),
                 ProviderServiceScreen(),
-                ProviderDashboardScreen(),
+                const ProviderMessageScreen(),
               ],
             ),
           ),

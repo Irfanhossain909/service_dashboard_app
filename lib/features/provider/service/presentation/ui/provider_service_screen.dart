@@ -6,8 +6,6 @@ import 'package:service_dashboard_app/core/const/app_color.dart';
 import 'package:service_dashboard_app/core/route/app_routes.dart';
 import 'package:service_dashboard_app/features/provider/dashboard/presentation/ui/provider_dashboard_screen.dart';
 import 'package:service_dashboard_app/features/provider/service/presentation/widget/service_screen_table.dart';
-import 'package:service_dashboard_app/features/vendor/order/presentation/widget/order_screen_table.dart';
-
 class ProviderServiceScreen extends StatelessWidget {
   const ProviderServiceScreen({super.key});
 

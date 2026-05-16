@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
-import 'package:get/utils.dart';
 import 'package:service_dashboard_app/core/component/app_button/app_button.dart';
 import 'package:service_dashboard_app/core/component/app_dropdown/app_dropdown_gender.dart';
 import 'package:service_dashboard_app/core/component/app_input/app_input_widget_two.dart';

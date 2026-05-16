@@ -36,7 +36,6 @@ import 'package:service_dashboard_app/features/provider/controller_management/pr
 import 'package:service_dashboard_app/features/provider/customer_management/presentation/ui/provider_customer_details_screen.dart';
 import 'package:service_dashboard_app/features/provider/customer_management/presentation/ui/provider_customer_management_screen.dart';
 import 'package:service_dashboard_app/features/provider/dashboard/presentation/ui/provider_dashboard_screen.dart';
-import 'package:service_dashboard_app/features/provider/delivery/presentation/ui/provider_delivery_management_screen.dart';
 import 'package:service_dashboard_app/features/provider/earn_and_payout/presentation/ui/provider_earn_and_payout_screen.dart';
 import 'package:service_dashboard_app/features/provider/legal/presentation/ui/provider_legal_screen.dart';
 import 'package:service_dashboard_app/features/provider/navigation/ui/provider_navigation_screen.dart';
@@ -46,6 +45,8 @@ import 'package:service_dashboard_app/features/provider/boking/presentation/ui/p
 import 'package:service_dashboard_app/features/provider/profile/presentation/ui/provider_profile_screen.dart';
 import 'package:service_dashboard_app/features/provider/security/presentation/ui/provider_security_screen.dart';
 import 'package:service_dashboard_app/features/provider/support/presentation/ui/provider_support_screen.dart';
+import 'package:service_dashboard_app/features/provider/message/presentation/ui/provider_message_screen.dart';
+import 'package:service_dashboard_app/features/provider/message/presentation/ui/provider_chat_screen.dart';
 
 List<GetPage> appRootRoutesFile = <GetPage>[
   // --------------------- Navigation ---------------------
@@ -199,12 +200,7 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     page: () => const VendorProfileScreen(),
   ),
 
-  /// ========= Provider Delivery Management Routes =========
-  GetPage(
-    name: AppRoutes.instance.providerDeliveryManagementScreen,
-    binding: AppBinding(),
-    page: () => const ProviderDeliveryManagementScreen(),
-  ),
+  
 
   /// ========= Provider Order Routes =========
   GetPage(
@@ -273,6 +269,18 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.providerCustomerDetailsScreen,
     binding: AppBinding(),
     page: () => const ProviderCustomerDetailsScreen(),
+  ),
+
+  /// ========= Provider Message Routes =========
+  GetPage(
+    name: AppRoutes.instance.providerMessageScreen,
+    binding: AppBinding(),
+    page: () => const ProviderMessageScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.providerChatScreen,
+    binding: AppBinding(),
+    page: () => const ProviderChatScreen(),
   ),
 
   /// ========= Provider Profile Routes =========

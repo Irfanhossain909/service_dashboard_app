@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:service_dashboard_app/core/component/app_button/app_button.dart';
 import 'package:service_dashboard_app/core/component/app_text/app_text.dart';
-
 import 'package:service_dashboard_app/core/route/app_routes.dart';
 import 'package:service_dashboard_app/features/provider/boking/presentation/widget/booking_item_table.dart';
 import 'package:service_dashboard_app/features/provider/dashboard/presentation/ui/provider_dashboard_screen.dart';
-import 'package:service_dashboard_app/features/vendor/products/presentation/widget/product_screen_table.dart';
 
 class ProviderBookingScreen extends StatelessWidget {
   const ProviderBookingScreen({super.key});

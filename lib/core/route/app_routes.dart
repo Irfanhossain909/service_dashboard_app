@@ -11,12 +11,7 @@ class AppRoutes {
   final String vendorNavigationScreen = "/vendor-navigation-screen";
   final String providerNavigationScreen = "/provider-navigation-screen";
 
-  /// ========= Provider Delivery Management Routes =========
-  final String providerDeliveryManagementScreen =
-      "/provider-delivery-management-screen";
-  final String providerDeliveryManagementDetailsScreen =
-      "/provider-delivery-management-details-screen";
-
+ 
   /// ========= Provider Order Routes =========
   final String providerOrderScreen = "/provider-order-screen";
   final String providerAppServicesScreen = "/provider-app-services-screen";
@@ -71,6 +66,10 @@ class AppRoutes {
       "/provider-customer-management-screen";
   final String providerCustomerDetailsScreen =
       "/provider-customer-details-screen";
+
+  /// ========= Provider Message Routes =========
+  final String providerMessageScreen = "/provider-message-screen";
+  final String providerChatScreen = "/provider-chat-screen";
 
   /// ========= Provider Profile Routes =========
   final String providerLegalScreen = "/provider-legal-screen";

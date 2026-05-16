@@ -10,6 +10,10 @@ class AppRoutes {
   /// ========= Navigation Routes =========
   final String vendorNavigationScreen = "/vendor-navigation-screen";
 
+  /// ========= Vendor Delivery Management Routes =========
+  final String vendorDeliveryManagementScreen = "/vendor-delivery-management-screen";
+  final String vendorDeliveryManagementDetailsScreen = "/vendor-delivery-management-details-screen";
+
   /// ========= Vendor Order Routes =========
   final String vendorOrderScreen = "/vendor-order-screen";
   final String vendorOrderDetailsScreen = "/vendor-order-details-screen";

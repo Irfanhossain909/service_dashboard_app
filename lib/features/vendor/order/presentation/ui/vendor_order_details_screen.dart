@@ -333,7 +333,7 @@ class LocalDelivery extends StatelessWidget {
     );
   }
 
-  _customerDetails({
+  Widget _customerDetails({
     required String title,
     required String value,
     bool isBold = false,

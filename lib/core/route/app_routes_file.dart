@@ -16,6 +16,8 @@ import 'package:service_dashboard_app/features/vendor/controller_management/pres
 import 'package:service_dashboard_app/features/vendor/customer_management/presentation/ui/vendor_customer_details_screen.dart';
 import 'package:service_dashboard_app/features/vendor/customer_management/presentation/ui/vendor_customer_management_screen.dart';
 import 'package:service_dashboard_app/features/vendor/dashboard/presentation/ui/vendor_dashboard_screen.dart';
+import 'package:service_dashboard_app/features/vendor/delivery/presentation/ui/vendor_delivery_management_details_screen.dart';
+import 'package:service_dashboard_app/features/vendor/delivery/presentation/ui/vendor_delivery_management_screen.dart';
 import 'package:service_dashboard_app/features/vendor/earn_and_payout/presentation/ui/vendor_earn_and_payout_screen.dart';
 import 'package:service_dashboard_app/features/vendor/legal/presentation/ui/vendor_legal_screen.dart';
 import 'package:service_dashboard_app/features/vendor/navigation/ui/vendor_navigation_screen.dart';
@@ -69,6 +71,19 @@ List<GetPage> appRootRoutesFile = <GetPage>[
   GetPage(
     name: AppRoutes.instance.connnetStripeScreen,
     page: () => const ConnnetStripeScreen(),
+  ),
+
+
+  /// ========= Vendor Delivery Management Routes =========
+  GetPage(
+    name: AppRoutes.instance.vendorDeliveryManagementScreen,
+    binding: AppBinding(),
+    page: () => const VendorDeliveryManagementScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.vendorDeliveryManagementDetailsScreen,
+    binding: AppBinding(),
+    page: () => const VendorDeliveryManagementDetailsScreen(),
   ),
 
   /// ========= Vendor Order Routes =========

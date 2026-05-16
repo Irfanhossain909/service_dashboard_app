@@ -6,6 +6,7 @@ import 'package:service_dashboard_app/core/component/app_text/app_text.dart';
 import 'package:service_dashboard_app/core/const/app_assets.dart';
 import 'package:service_dashboard_app/core/const/app_color.dart';
 import 'package:service_dashboard_app/features/vendor/dashboard/presentation/ui/vendor_dashboard_screen.dart';
+import 'package:service_dashboard_app/features/vendor/delivery/presentation/ui/vendor_delivery_management_screen.dart';
 import 'package:service_dashboard_app/features/vendor/navigation/controller/vendor_navigation_screen_controller.dart';
 import 'package:service_dashboard_app/features/vendor/order/presentation/ui/vendor_order_screen.dart';
 import 'package:service_dashboard_app/features/vendor/products/presentation/ui/vendor_product_screen.dart';
@@ -26,7 +27,7 @@ class VendorNavigationScreen extends StatelessWidget {
                 VendorDashboardScreen(),
                 VendorProductScreen(),
                 VendorOrderScreen(),
-                VendorDashboardScreen(),
+                VendorDeliveryManagementScreen(),
               ],
             ),
           ),

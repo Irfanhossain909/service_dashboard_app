@@ -96,14 +96,21 @@ class ProviderDashboardScreen extends StatelessWidget {
                 ],
               ),
               AppText(
-                data: "Active deliveries",
+                data: "Upcoming bookings",
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w700,
                 color: AppColors.black,
               ),
-              ActiveDeliveryCard(),
-              ActiveDeliveryCard(),
-              ActiveDeliveryCard(),
+              DashboardDataTable(
+                items: [
+                  DashboardDataTableItemModel(
+                    orderID: "6890",
+                    type: "Product",
+                    status: "Pending",
+                    amount: "\$100",
+                  ),
+                ],
+              ),
             ],
           ),
         ),
@@ -113,15 +120,13 @@ class ProviderDashboardScreen extends StatelessWidget {
 }
 
 class ProviderDrawer extends StatelessWidget {
-  const ProviderDrawer({
-    super.key,
-  });
+  const ProviderDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
       width: 255.w,
-    
+
       backgroundColor: AppColors.backgrounColor,
       child: SafeArea(
         child: Container(
@@ -203,7 +208,9 @@ class ProviderDrawer extends StatelessWidget {
                   children: [
                     MenuBarItems(
                       onTap: () {
-                        Get.toNamed(AppRoutes.instance.providerProfileMainScreen);
+                        Get.toNamed(
+                          AppRoutes.instance.providerProfileMainScreen,
+                        );
                         // Get.toNamed(AppRoutes.instance.providerProfileScreen);
                       },
                       icon: AppAssets.profile,

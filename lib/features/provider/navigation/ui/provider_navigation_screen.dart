@@ -34,7 +34,7 @@ class ProviderNavigationScreen extends StatelessWidget {
 
           bottomNavigationBar: Container(
             // margin: const EdgeInsets.all(16),
-            padding: EdgeInsets.only(bottom: 44.r, top: 24.r),
+            padding: EdgeInsets.only(bottom: 12.r, top: 12.r),
             decoration: BoxDecoration(
               color: AppColors.backgrounColor,
 
@@ -49,49 +49,51 @@ class ProviderNavigationScreen extends StatelessWidget {
             ),
 
             child: Obx(
-              () => Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: List.generate(4, (index) {
-                  final isSelected = controller.selectedIndex.value == index;
-                  final iconPaths = [
-                    AppAssets.nav1,
-                    AppAssets.nav5,
-                    AppAssets.nav6,
-                    AppAssets.nav7,
-                  ];
-                  final textPaths = [
-                    "Dashboard",
-                    "Booking",
-                    "Services",
-                    "Messages",
-                  ];
-                  return InkWell(
-                    onTap: () => controller.changeIndex(index),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      spacing: 4.h,
-                      children: [
-                        SvgPicture.asset(
-                          iconPaths[index],
-                          width: 24.r,
-                          height: 24.r,
-                          colorFilter: ColorFilter.mode(
-                            isSelected ? AppColors.brown : AppColors.nevColor,
-                            BlendMode.srcIn,
+              () => SafeArea(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: List.generate(4, (index) {
+                    final isSelected = controller.selectedIndex.value == index;
+                    final iconPaths = [
+                      AppAssets.nav1,
+                      AppAssets.nav5,
+                      AppAssets.nav6,
+                      AppAssets.nav7,
+                    ];
+                    final textPaths = [
+                      "Dashboard",
+                      "Booking",
+                      "Services",
+                      "Messages",
+                    ];
+                    return InkWell(
+                      onTap: () => controller.changeIndex(index),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        spacing: 4.h,
+                        children: [
+                          SvgPicture.asset(
+                            iconPaths[index],
+                            width: 24.r,
+                            height: 24.r,
+                            colorFilter: ColorFilter.mode(
+                              isSelected ? AppColors.brown : AppColors.nevColor,
+                              BlendMode.srcIn,
+                            ),
                           ),
-                        ),
-                        AppText(
-                          data: textPaths[index],
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w700,
-                          color: isSelected
-                              ? AppColors.brown
-                              : AppColors.nevColor,
-                        ),
-                      ],
-                    ),
-                  );
-                }),
+                          AppText(
+                            data: textPaths[index],
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w700,
+                            color: isSelected
+                                ? AppColors.brown
+                                : AppColors.nevColor,
+                          ),
+                        ],
+                      ),
+                    );
+                  }),
+                ),
               ),
             ),
           ),
